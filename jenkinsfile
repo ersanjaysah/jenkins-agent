@@ -1,10 +1,16 @@
 pipeline {
-    agent any
+    agent {dockerfile true}
 
     stages {
         stage('git checkout') {
             steps {
-                
+                sh 'steps checking out source code'
+            }
+        }
+
+        stage('building') {
+            steps {
+                sh 'Building the dockerfile'
             }
         }
     }
